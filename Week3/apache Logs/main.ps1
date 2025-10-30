@@ -1,3 +1,3 @@
-﻿﻿. (Join-Path $PSScriptRoot apache-logs1.ps1)
+﻿﻿. (Join-Path $PSScriptRoot HWLogs.ps1)
 
 ApacheLogs1  | Format-Table -AutoSize -Wrap
