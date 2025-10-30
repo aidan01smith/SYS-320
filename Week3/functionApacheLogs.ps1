@@ -21,15 +21,23 @@ function ApacheLogs{
 
     $regex = [regex] "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}"
 
-    $unorganized = $regex.Matches($notFounds)
+    $unorganizedips = $regex.Matches($notFounds)
 
+    # Check if $notFounds has any results before calling Matches
+    if ($notFounds) {
+        $unorganizediPs = $regex.Matches($notFounds)
+    # Display the IPs
+        $unorganizediPs
+    } else {
+        Write-Host "No matching log entries found for the given criteria."
+    }
 
 
     #get the ips
     $ips = @()
 
-     for ($i=0; $i -lt $unorganized.Count; $i++){
-        $ips += [pscustomobject]@{ "IP"  = $unorganized[$i].Value; }
+     for ($i=0; $i -lt $unorganizedips.Count; $i++){
+        $ips += [pscustomobject]@{ "IP"  = $unorganizedips[$i].Value; }
     }
 
 # Count $Ips
