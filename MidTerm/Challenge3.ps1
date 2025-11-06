@@ -1,5 +1,5 @@
-Import-Module -Name "C:\Users\champuser\Documents\SYS-320\MidTerm\Challenge1.ps1"
-Import-Module -Name "C:\Users\champuser\Documents\SYS-320\MidTerm\Challenge2.ps1"
+. (Join-Path $PSScriptRoot Challenge1.ps1)
+. (Join-Path $PSScriptRoot Challenge2.ps1)
 
 # used chadbaldwin.net for reference on filtering logs
 
