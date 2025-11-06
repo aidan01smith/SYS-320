@@ -1,5 +1,5 @@
 function ApacheLogs1(){
-clear
+
 $logsNotFormated = Get-Content C:\xampp\apache\logs\access.log
 $tableRecords = @()
 
