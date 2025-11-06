@@ -73,3 +73,17 @@ function enableAUser($name){
    Enable-LocalUser $userToBeEnabled
    
 }
+
+# TODO: Create a function called checkUser in Users that: 
+#              - Checks if user a exists. 
+#              - If user exists, returns true, else returns false
+
+function checkUser($name){
+
+    $checkTheUser = (Get-LocalUser).Name -contains $name
+
+    return $checkTheUser
+
+}
+
+
