@@ -5,7 +5,7 @@
 . (Join-Path $PSScriptRoot String-Helper.ps1)
 
 
-$Prompt  = "choose one of the options below:`n"
+$Prompt = "choose one of the options below:`n"
 $Prompt += "1 - show last 10 apache logs`n"
 $Prompt += "2 - show last 10 failed login attempts for all users`n"
 $Prompt += "3 - display at risk users`n"
