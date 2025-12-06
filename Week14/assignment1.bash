@@ -39,11 +39,12 @@ echo ""
 
 displayCoursesLocation() {
 
-	echo "input a location"
+	echo "input a location (ex. JOYC 310)"
 	read location 
 	
 	echo ""
-	echo "courses of location"
+	echo "courses of $location"
+	echo ""
 	cat "$courseFile" | grep "$location" | cut -d';' -f1,2,5,6,7
 	sort -n | uniq -c | sort -n -r
 	echo ""
@@ -58,14 +59,13 @@ displayCoursesLocation() {
 
 displayCourseAvailability() {
 
-	echo "input a course"
-	read courseNumber
+	echo "input a course (ex. SYS)"
+	read courseList
 
 	echo ""
-	cat "$courseFile" | grep "$courseNumber" | cut -d';' -f4
-	if [[ "$courseNumber" ]]
-
-	fi
+	grep "$courseList" "$courseFile" | awk -F';' '$4> 0' | \
+	cut -d';' -f1,2,3,4,5,6,7,8,9,10 | sed 's/;/ | /g'
+	echo ""
 }
 
 
